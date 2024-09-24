@@ -1,504 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NinjaSMS</title>
     <style>
-
-
-.navTabs {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-    gap: 30px;
-    text-decoration: none;
-    background-color: black;
-    transition: background-color 0.3s ease;
-}
-
-.navTabsImage {
-    display: none;
-    background: black;
-    padding-top: 2px;
-    padding-left: 4px;
-}
-
-.nav-item:hover {
-    background-color: #454141;
-}
-
-.nav-item {
-    color: white;
-    cursor: pointer;
-    padding: 6px;
-}
-
-
-.item-container {
-    display: flex;
-    overflow: hidden;
-}
-
-.item-container2 {
-    display: flex;
-    overflow: hidden;
-}
-
-.item-container3 {
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-}
-
-.item-first,
-.item-third {
-    flex-grow: 1;
-}
-
-.item-second {
-    flex-grow: 3;
-}
-.item.item-three {
-    flex-shrink: 4;
-}
-
-.item {
-    background-color: #9a3434;
-    color: white;
-    font-size: 12px;
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-    flex-shrink: 1;
-    border: 1px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.item:hover {
-    background-color: #850000;
-}
-
-.button {
-    background-color: #6c757d;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.pulse {
-    padding: 10px 20px;
-    background-color: #000000;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    /*Your Code goes here*/
-    /*This goes at line 92 in .pulse container*/
-
-  /*Your Code goes here*/
-    animation: pulse 3s infinite;
-  /*----*/
-
-/*This goes at line 99 in a new keyframe*/
-
-/*Your Code goes here*/
-@keyframes pulse {
-    0% {
-        transform: scale(1);
+    .navTabs {
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+        gap: 30px;
+        text-decoration: none;
+        background-color: black;
+        transition: background-color 0.3s ease;
+        flex-wrap: wrap;
+        /* Allow wrapping for smaller screens */
+        position: fixed;
+        /* Makes it stick to the page */
+        top: 0;
+        /* Stick at the top */
+        left: 0;
+        /* Align to the left edge */
+        width: 100%;
+        /* Make it span the full width */
+        z-index: 1000;
+        /* Ensure it's on top of other content */
     }
 
-    50% {
-        transform: scale(1.25);
+    .navTabsImage {
+        display: none;
+        background: black;
+        padding-top: 2px;
+        padding-left: 4px;
     }
 
-    100% {
-        transform: scale(1);
+    .nav-item:hover {
+        background-color: #454141;
     }
-}
-    /*----*/
-    margin-top: 20px;
-    cursor: pointer;
-}
 
-/*Your Code goes here*/
-@keyframes pulse {
-    
-    
-}
-/*----*/
-
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li,
-table {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
-    background-color: #f7f7f7;
-    color: #333;
-}
-
-header {
-    background-color: #9a3434;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 24px;
-}
-
-section {
-    padding: 40px 20px;
-    margin-bottom: 5px;
-    background-color: #fff;
-}
-
-.about {
-    background-color: #fff4f4;
-}
-
-h2 {
-    margin-bottom: 10px;
-    font-size: 24px;
-}
+    .nav-item {
+        color: white !important;
+        cursor: pointer;
+        padding: 6px;
+        text-decoration: none !important;
+    }
 
 
+    .button {
+        background-color: #6c757d;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
 
-.hero {
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-}
+    .pulse {
+        padding: 10px 20px;
+        background-color: #000000;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        animation: pulse 3s infinite;
+        margin-top: 20px;
+        cursor: pointer;
+    }
 
-.hero .hero-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
+    body,
+    h1,
+    h2,
+    h3,
+    p,
+    ul,
+    li,
+    table {
+        margin: 0;
+        padding: 0;
+    }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border: 1px solid #4a4a4a;
-}
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        background-color: #f7f7f7;
+        color: #333;
+    }
 
-table th,
-table td {
-    padding: 10px;
-    border: 1px solid #4a4a4a;
-    text-align: left;
-}
+    header {
+        background-color: #bd4a4a;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
 
-table th {
-    background-color: #9a3434;
-    color: #fff;
-}
+    h1 {
+        font-size: 24px;
+    }
 
-table td img {
-    max-width: 100px;
-    height: auto;
-}
+    section {
+        padding: 40px 20px;
+        margin-bottom: 5px;
+        background-color: #fff;
+    }
 
-.container,
-.container2 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-}
+    .about
+ {
+        background-color: #fff4f4;
+    }
 
-.container3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
 
-.equipment-item {
-    text-align: center;
-    background-color: #f3f3f3;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
+    .hero {
+        color: #fff;
+        padding: 50px 0;
+        text-align: center;
+    }
 
-.equipment-item img {
-    width: 50px;
-    height: auto;
-    margin-bottom: 10px;
-}
+    .hero .hero-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 
-h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        border: 1px solid #4a4a4a;
+    }
 
-.equipment-item p {
-    font-size: 14px;
-}
+    table th,
+    table td {
+        padding: 10px;
+        border: 1px solid #4a4a4a;
+        text-align: center;
+        font-size: 14px;
+    }
 
-ul {
-    padding-left: 20px;
-}
+    table th {
+        background-color: #bd4a4a;
+        color: #fff;
+    }
 
-.tips {
-    background-color: #fff8f8;
-    line-height: 30px;
-}
+    table td img {
+        max-width: 100px;
+        height: auto;
+    }
 
-.meal-p {
-    background-color: #fff8f8;
-}
+    .container,
+    .container2 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
 
-.meal-goal {
-    background: #e7e3e3;
-    border: 1px solid #cac7c7;
-    padding: 10px;
-    border-radius: 4px;
-}
+    }
 
-.video-item {
-    text-align: center;
-    background-color: #f3f3f3;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
+    .container3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.video-item {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
-}
+    .equipment-item {
+        text-align: center;
+        background-color: #f3f3f3;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
 
-.video-item img {
-    width: 100%;
-    height: 100%;
-    transition-property: background-color
-}
+    .equipment-item img {
+        width: 50px;
+        height: auto;
+        margin-bottom: 10px;
+    }
 
-.video-item::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 40%;
-    height: 40%;
-    background-size: contain;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/27/27223.png');
-    background-repeat: no-repeat;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
-}
+    h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
 
-.video-item:hover {
-    transform: scale(1.2, 1.1);
-    background-color: #ebb6b6;
-    cursor:pointer;
-}
+    .equipment-item p {
+        font-size: 14px;
+    }
 
-.video-item:hover::after {
-    opacity: 1;
-}
+    ul {
+        padding-left: 20px;
+    }
 
-.video-item h3 {
-    font-size: 12px;
-    margin-bottom: 5px;
-    margin-top: 15px;
-}
-
-.scroll-container {
-    width: 500px;
-    overflow: hidden;
-}
-
-.scroll {
-    width: 800px;
-    height: 40px;
-    background-color: brown;
-    animation: newsScroll 13s linear infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 18px;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-footer {
-    background-color: black;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
+    .tips .happy {
+        background-color: #fff4f4;
+        line-height: 30px;
+    }
 
 
+    .white {
+        background-color: #fff;
+        line-height: 30px;
+
+    }
+
+    .meal-p {
+        background-color: #fff8f8;
+    }
+
+    .meal-goal {
+        background: #e7e3e3;
+        border: 1px solid #cac7c7;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    .video-item {
+        text-align: center;
+        background-color: #f3f3f3;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    .video-item {
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+    }
+
+    .video-item img {
+        width: 100%;
+        height: 100%;
+        transition-property: background-color
+    }
+
+    .video-item::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 40%;
+        height: 40%;
+        background-size: contain;
+        background-image: url('https://cdn-icons-png.flaticon.com/512/27/27223.png');
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease;
+    }
+
+    .video-item:hover {
+        transform: scale(1.2, 1.1);
+        background-color: #ebb6b6;
+        cursor: pointer;
+    }
+
+    .video-item:hover::after {
+        opacity: 1;
+    }
+
+    .video-item h3 {
+        font-size: 12px;
+        margin-bottom: 5px;
+        margin-top: 15px;
+    }
+
+    .scroll-container {
+        width: 100%;
+        /* Responsive width */
+        max-width: 800px;
+        /* Optional max-width */
+        overflow: hidden;
+    }
+
+    .scroll {
+        width: 130%;
+        /* Responsive width */
+        height: 40px;
+        background-color: brown;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: newsScroll 30s linear infinite;
+    }
+
+    @keyframes newsScroll {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .popup-box {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    /* To darken the background */
+    .popup-background {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+    }
+
+    /* Style for the button */
+    .button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+
+    .close-btn {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .close-btn:hover {
+        background-color: darkred;
+    }
+
+    footer {
+        background-color: black;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    a {
+        color: inherit;
+        /* Use the inherited color */
+        text-decoration: none;
+        /* Remove underline for all links */
+    }
+
+    a:visited {
+        color: inherit;
+        /* Ensure visited links also inherit the color */
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .navTabs {
+            align-items: center;
+            /* Center items */
+            overflow: hidden;
+        }
+
+        .item {
+            flex-basis: 100%;
+            /* Full width on small screens */
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            /* Adjust header size for smaller screens */
+        }
+    }
     </style>
-</head>        
+</head>
 
 <body>
-
-<div class="MenuSection">
-    <ul class="navTabs">
-        <li class="nav-item"> Home</li>
-        <li class="nav-item"> WorkOut</li>
-        <li class="nav-item"> Stay Fit</li>
-        <li class="nav-item"> Eat Healthy</li>   
-    </ul>
-    <div class="navTabs"></div>
+    <div class="MenuSection">
+        <ul class="navTabs">
+            <li class="nav-item"> <a href="#">Home</a></li>
+            <li class="nav-item"> <a href="#us">Us</a></li>
+            <li class="nav-item"> <a href="#wish">My Wish</a></li>
+            <li class="nav-item"> <a href="#tips">Tips</a></li>
+        </ul>
+    </div>
     <div class="navTabsImage">
-    <img src="https://img.icons8.com/android/24/FFFFFF/menu.png
+        <img src="https://img.icons8.com/android/24/FFFFFF/menu.png
 " alt="Hamburger">
-</div>
-</div>
-
-<header class="hero">
-    <div class="hero-content">
-        <h2>Welcome to My Fitness Tips</h2>
-        <p>Stay fit and healthy with our workout routines.</p>
     </div>
-</header>
-
-<section class="about">
-    <div class="container">
-        <h2>About Us</h2>
-        <p>Welcome to My Fitness Tips! We are dedicated to helping you achieve your fitness goals and live a healthy lifestyle. Our mission is to provide you with valuable workout routines, fitness tips, and expert guidance to support you on your fitness journey.</p>
     </div>
-    <button class="button">Know More</button>
-</section>
-
-<section class="workouts">
-    <h2>Workout Routines</h2>
-    <table>
-        <tr>
-            <th>Workout</th>
-            <th>Description</th>
-            <th>Image</th>
-        </tr>
-        <tr>
-            <td>Push-ups</td>
-            <td>A classic exercise that targets the chest, arms, and core.</td>
-            <td><img src="https://cdn-icons-png.flaticon.com/512/2548/2548530.png" alt="Push-ups"></td>
-        </tr>
-        <tr>
-            <td>Squats</td>
-            <td>A lower body exercise that targets the legs and glutes.</td>
-            <td><img src="https://cdn-icons-png.flaticon.com/512/3043/3043290.png" alt="Squats"></td>
-        </tr>
-        <tr>
-            <td>Plank</td>
-            <td>A core exercise that helps strengthen the abs and back.</td>
-            <td><img src="https://cdn-icons-png.flaticon.com/512/2647/2647657.png" alt="Plank"></td>
-        </tr>
-    </table>
-</section>
-
-<section class="tips">
-    <h2>Fitness Tips</h2>
-    <ul>
-        <li>Stay hydrated during workouts.</li>
-        <li>Warm up to prevent injuries.</li>
-        <li>Listen to your body and rest when needed.</li>
-        <li>Incorporate strength training exercises.</li>
-        <li>Focus on flexibility with stretching exercises.</li>
-        <li>Eat a balanced diet for fuel and nutrition.</li>
-        <li>Set realistic goals and track your progress.</li>
-    </ul>
-    <button class="pulse">Sign Up for Our Newsletter</button>
-</section>
-
-<section id="equipment">
-    <h2>Fitness Equipment</h2>
-    <div class="container2">
-        <div class="equipment-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/1053/1053916.png" alt="Dumbbells">
-            <h3>Dumbbells</h3>
-            <p>Dumbbells are versatile strength training tools that can be used for a wide range of exercises targeting various muscle groups.</p>
+    <header class="hero">
+        <div class="hero-content">
+            <h2>Welcome to My Life Cutu...</h2>
+            <p>Stay Happy, Healthy and Fit always!</p>
         </div>
-        <div class="equipment-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/2447/2447530.png" alt="Resistance Bands">
-            <h3>Resistance Bands</h3>
-            <p>Resistance bands provide a convenient and portable way to add resistance to your workouts, helping to build strength and improve flexibility.</p>
+    </header>
+    
+
+    <section class="about">
+        <div class="container" id="about">
+            <h2>About</h2>
+            <p>Hi there, love. This is your special space, a place where I can express what words sometimes can’t capture. My name is Suraj, but I’m the best version of myself when I’m with you. I’ve always believed in love, but never knew it could be this profound until you came into my life. My world is brighter because you’re in it, and every day I strive to be someone worthy of the incredible person you are.
+            </p>
         </div>
-        <div class="equipment-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/120/120479.png" alt="Exercise Ball">
-            <h3>Exercise Ball</h3>
-            <p>An exercise ball is a versatile tool that can be used for core exercises, stability training, and improving balance.</p>
-        </div>
+        <button class="button" onclick="openPopup()">Know More</button>
+    </section>
+    <div class="popup-background" id="popupBackground"></div>
+    <div class="popup-box" id="popupBox">
+        <p>Don't you already know everything about me girl?</p>
+        <button class="close-btn" onclick="closePopup()">Yes honey!</button>
     </div>
-</section>
+    <script>
+    // Function to open the popup
+    function openPopup() {
+        document.getElementById("popupBox").style.display = "block";
+        document.getElementById("popupBackground").style.display = "block";
+    }
 
-<section class="meal-p">
-    <h2>Suggested Meal Plans</h2>
-    <div class="meal-goal">    
-        <h3>By Goal</h3>
-            <div class="item-container">
-                <div class="item item-first">Lose Weight</div>
-                <div class="item item-second">Get Healthy</div>
-                <div class="item item-third">Stay Fit</div>
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById("popupBox").style.display = "none";
+        document.getElementById("popupBackground").style.display = "none";
+    }
+    </script>
+
+
+    <section class="us" id="us">
+        <h2>Us</h2>
+        <p>Here’s how I see "Us" in a nutshell<p>
+                <table>
+                    <tr>
+                        <th>You</th>
+                        <th>Me</th>
+                        <th>Us</th>
+                    </tr>
+                    <tr>
+                        <td>Moonlight</td>
+                        <td>Sunshine</td>
+                        <td>Perfect Harmony</td>
+                    </tr>
+                    <tr>
+                        <td>Loving</td>
+                        <td>Protective</td>
+                        <td>Deeply Connected
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Beautiful</td>
+                        <td>Lucky</td>
+                        <td>Unstoppable</td>
+                    </tr>
+                    <tr>
+                        <td>Laughter</td>
+                        <td>Comfort</td>
+                        <td>Endless Joy</td>
+                    </tr>
+                    <tr>
+                        <td>Passionate</td>
+                        <td>Caring</td>
+                        <td>Inseparable</td>
+                    </tr>
+                    <tr>
+                        <td>Beautiful Soul</td>
+                        <td>Grateful Heart</td>
+                        <td>Timeless Love</td>
+                    </tr>
+                    <tr>
+                        <td>Adventurous</td>
+                        <td>Supportive</td>
+                        <td>Ready for Anything</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color: #d22828; color: white;">Together Forever....... &hearts; &hearts; &hearts;</td>
+                    </tr>
+                </table>
+    </section>
+
+
+    <section class="about" id="wish">
+        <h2>Things that I wish to do with You</h2>
+        <ul>
+            <li><b>Travel the world</b>: From serene beaches to bustling cities, I want to see every beautiful corner of this planet with you by my side.</li>
+            <li><b>Make new traditions</b>: From our favorite restaurants to little yearly rituals, I want to build moments with you that are just ours.
+            </li>
+            <li><b>Grow together</b>: I want to be your partner in life and growth, supporting each other to become the best versions of ourselves. I want to support you in achieving your dreams, as you do for me.
+            </li>
+            <li><b>Create a home</b>: A place filled with warmth, love, peace and laughter where we can grow old together. </li>
+            <li><b>Cook together</b>: Whether it’s trying new recipes or sticking to our favorites, the kitchen will always be our happy place.</li>
+            <li><b>Celebrate the little things</b>: From random Tuesday nights to yearly anniversaries, every day with you is a reason to celebrate.</li>
+        </ul>
+        <button class="pulse">Sign Up for our lifetime of togetherness</button>
+    </section>
+    <section class="happy" id="tips">
+        <h2>Tips to Make Me Happy</h2>
+        <ul>
+            <li><b>Your smile</b>: Every time you smile, my world brightens up. Keep smiling.
+            </li>
+            <li><b>Hugs</b>: I’m happiest when I’m wrapped in your arms.
+            </li>
+            <li><b>Our talks</b>: No matter how simple or deep, every conversation with you means the world to me.
+            </li>
+            <li><b>Being you</b>: Just be yourself, because who you are is everything I’ve ever dreamed of.
+            </li>
+        </ul>
+    </section>
+
+    
+
+    <section class="about">
+        <div class="container">
+            <h2>Closing Note</h2>
+            <p>You are my heart, my future, and my forever. This page is a small tribute to the boundless love I have for you. I dedicate my life, my heart, and everything I am to you. Always. ♥
+            </p>
+        </div>
+    </section>
+
+
+    <section id="videos">
+
+                <div class="scroll">बहुत प्यार तुमसे, करते हैं सनम! हम तुम्हारे थे, तुम्हारे हैं, और तुम्हारे ही रहेंगे.....
+                </div>
             </div>
-    </div>
-    <br/>
-    <div class="meal-goal">
-        <h3>By Food Type</h3>
-        <div class="item-container2">
-            <div class="item item-one">Vegan Meal</div>
-            <div class="item item-two">Low Carb Meal</div>
-            <div class="item item-three">Keto Meal</div>
-            <div class="item item-four">Pure Veg</div>
         </div>
-    </div>
-    <br/>
-    <div class="meal-goal">
-        <h3>By Health Focus</h3>
-        <div class="item-container3">
-            <div class="item item-uno">Heart-Healthy Plan</div>
-            <div class="item item-dos">Digestive Health Plan</div>
-            <div class="item item-tres">Bone Health Plan</div>
-            <div class="item item-cuatro">Brain-Boosting Plan</div>
-        </div>
-    </div>
-</section>
-
-<section id="videos">
-    <h2>Fitness Videos</h2>
-    <div class="container3">
-        <div class="video-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/5822/5822441.png" alt="Gymnastics">
-            <h3>Gymnastics Video</h3>
-        </div>
-        <div class="video-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/7922/7922188.png" alt="Weightlifting">
-            <h3>Weightlifting Videos</h3>
-        </div>
-        <div class="scroll-container">
-             <div class="scroll">Follow our channel on Instagram and Youtube to stay notified about our upcoming videos
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2023 My Fitness Tips. All rights reserved.</p>
-</footer>
-
+    </section>
+    <footer>
+        <p>© 2023. All rights reserved to you babu.</p>
+    </footer>
 </body>
